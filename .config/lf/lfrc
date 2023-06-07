@@ -1,0 +1,95 @@
+
+set shell fish
+set previewer ~/.config/lf/lf_kitty_preview
+set cleaner ~/.config/lf/lf_kitty_clean
+
+# Basic Settings
+set hidden false
+set ignorecase true
+set icons true
+
+# Custom Functions
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+# Archive bindings
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+# Trash bindings
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    file=${files%%;*}
+
+    trash-put "$(basename "$file")"
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+
+cmd restore_trash ${{
+  trash-restore
+}}
+
+# Bindings
+map d
+#map m
+
+map au unarchive
+map ae $wine "$f"
+
+# remaps
+map . set hidden!
+map <c-a> top # top of lf files
+map <c-e> bottom # bottom of lf files
+map <enter> open
+map A :rename; cmd-end # at the very end
+map R reload
+map dd $ts $f
+map dr $tsr
+map p paste
+map x $hx $f
+map yy copy
+
+# map C clear
+# map x cut
+# map mkf mkfile
+# map mkd mkdir
+
+# Movement
+map gD cd ~/Downloads
+map gG cd ~/GoogleDrive
+map gc cd ~/.config/lf
+map gd cd ~/Documents
+map gi cd ~/git
+map gl cd ~/switchdrive/DLM-distribution/Main
+map gm cd ~/switchdrive/Medium/vim-tricks
+map gf cd ~/.config/fish
+map gx cd ~/.config/helix
+map gv cd ~/.config/vifm
+map gn cd ~/.config/nvim/lua/yq
+map gs cd ~/switchdrive
+map gp cd ~/switchdrive/pywd
+map gb cd ~/switchdrive/bib
+map gr cd ~/switchdrive/rwd
+map gt cd ~/.config/vifm/Trash

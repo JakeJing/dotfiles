@@ -1,0 +1,116 @@
+#
+# Snipmate Snippets for Pandoc Markdown
+#
+# Many snippets have starred versions, i.e., versions
+# that end with an asterisk (`*`). These snippets use
+# vim's `"*` register---i.e., the contents of the
+# system clipboard---to insert text.
+
+extends markdown
+
+# Insert Title Block
+snippet %%
+	% ${1:`Filename('', 'title')`}
+	% ${2:`g:snips_author`}
+	% ${3:`strftime("%d %B %Y")`}
+
+	${4}
+snippet %%*
+	% ${1:`Filename('', @*)`}
+	% ${2:`g:snips_author`}
+	% ${3:`strftime("%d %b %Y")`}
+
+	${4}
+
+# library()
+snippet lib
+	library(${1:})
+snippet req
+	require(${1:}, quietly = TRUE)
+# If Condition
+snippet if
+	if( $1 ){
+		${2:}
+	}else{
+		${3:}
+	}
+# Function
+snippet fun
+	${1:funname} <- function(${2:parameters}) {
+	  ${3:}
+	}
+# repeat
+snippet re
+	repeat{
+	  ${2:}
+	  if($1) break
+	}
+
+# matrix
+snippet ma
+	matrix(NA, nrow = ${1:}, ncol = ${2:})
+
+# data frame
+snippet df
+	data.frame(${1:}, header = TRUE)
+
+# as *
+snippet as.da
+	as.data.frame()
+snippet as.vec
+	as.vector()
+snippet as.num
+	as.numeric()
+snippet as.ma
+	as.matrix()
+snippet as.li
+	as.list()
+snippet as.char
+	as.character()
+snippet as.fa
+	as.factor()
+	
+# head()
+snippet h
+	head()
+
+snippet #!
+	#!/usr/bin/env Rscript
+
+snippet debug
+	# Development & Debugging, don't forget to uncomment afterwards!
+	#--------------------------------------------------------------------------------
+	#setwd("~/Projekte/${1:}")
+	#opt <- list(${2:}
+	#            )
+	#--------------------------------------------------------------------------------
+
+
+# Took from pandoc-plugin <<<<
+# Underline with `=`s or `-`s
+snippet #===
+	#`repeat('=', strlen(getline(line(".") - 1)))`
+	${1}
+snippet #---
+	#`repeat('-', strlen(getline(line(".") - 1)))`
+	${1}
+
+# >>>>
+
+snippet r
+	\`\`\`{r ${1:chung_tag}, echo = FALSE ${2:options}}
+	${3:}
+	\`\`\`
+snippet ri
+	\`{r ${1:}}\`
+
+snippet copt
+	\`\`\` {r setup, echo = FALSE}
+		opts_chunk$set(fig.path='../figures/${1:}', cache.path='../cache/-'
+		, fig.align='center', fig.show='hold', par=TRUE)	
+		#opts_knit$set(upload.fun = imgur_upload) # upload images
+	\`\`\`
+
+	
+# End of File ===================================================================
+# vim: set noexpandtab:

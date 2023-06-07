@@ -1,0 +1,82 @@
+# see the beginning of this file for language-server https://github.com/helix-editor/helix/blob/d511122279b3b479362830305f4812f096273b6a/languages.toml#L14
+
+[[language]]
+name = "python"
+roots = ["pyproject.toml"]
+formatter = { command = "black", args = ["--quiet", "-"] }
+language-server = { command = "pyright-langserver", args = ["--stdio"] }
+config = {} 
+auto-format = true
+
+[[language]]
+name = "rust"
+auto-format = true
+
+[[language]]
+name = "typescript"
+auto-format = true
+# pass format options according to https://github.com/typescript-language-server/typescript-language-server#workspacedidchangeconfiguration omitting the "[language].format." prefix.
+config = { format = { "semicolons" = "insert", "insertSpaceBeforeFunctionParenthesis" = true } }
+
+[[language]]
+name = "fish"
+scope = "source.fish"
+injection-regex = "fish"
+file-types = ["fish"]
+shebangs = ["fish"]
+roots = []
+comment-token = "#"
+indent = { tab-width = 4, unit = "    " }
+
+[[grammar]]
+name = "fish"
+source = { git = "https://github.com/ram02z/tree-sitter-fish", rev = "84436cf24c2b3176bfbb220922a0fdbd0141e406" }
+
+[[language]]
+name = "r"
+scope = "source.r"
+injection-regex = "(r|R)"
+file-types = ["r", "R"]
+shebangs = ["r", "R"]
+roots = []
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
+language-server = { command = "R", args = ["--no-echo", "-e", "languageserver::run()"] }
+
+[[grammar]]
+name = "r"
+source = { git = "https://github.com/r-lib/tree-sitter-r", rev = "cc04302e1bff76fa02e129f332f44636813b0c3c" }
+
+[[language]]
+name = "rmarkdown"
+scope = "source.rmd"
+injection-regex = "(r|R|q)md"
+file-types = ["rmd", "Rmd", "qmd"]
+roots = []
+indent = { tab-width = 2, unit = "  " }
+grammar = "markdown"
+language-server = { command = "R", args = ["--no-echo", "-e", "languageserver::run()"] }
+
+[[language]]
+name = "javascript"
+scope = "source.js"
+injection-regex = "(js|javascript)"
+file-types = ["js", "mjs", "cjs"]
+shebangs = ["node"]
+roots = []
+comment-token = "//"
+language-server = { command = "typescript-language-server", args = ["--stdio"], language-id = "javascript" }
+indent = { tab-width = 2, unit = "  " }
+
+[language.debugger]
+name = "node-debug2"
+command = "node"
+transport = "stdio"
+quirks = { absolute-paths = true }
+args = ["/home/alpha2phi/workspace/temp/vscode-node-debug2/out/src/nodeDebug.js"]
+
+[[language.debugger.templates]]
+name = "source"
+request = "launch"
+completion = [ { name = "main", completion = "filename", default = "index.js" } ]
+args = { program = "{0}" }

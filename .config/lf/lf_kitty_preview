@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+file=$1
+w=$2
+h=$3
+x=$4
+y=$5
+
+if [[ "$( file -Lb --mime-type "$file")" =~ ^image ]]; then
+    # kitty +kitten icat --silent --stdin no --transfer-mode file --place "30x30@0x0" "$file" < /dev/null > /dev/tty
+    kitty +kitten icat --silent --stdin no --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file" < /dev/null > /dev/tty
+    exit 1
+elif [[ "$(file -Lb --mime-type "$file")" =~ "application/pdf" ]]; then
+    # echo "This is a PDF file."
+    pdftoppm -f 1 -l 1 -singlefile "$file" | kitty +kitten icat --transfer-mode=stream --place="${w}x${h}@${x}x${y}" 
+    exit 1
+else
+    pistol "$file"
+fi
+
+# install pistol with
+#   1. brew install libmagic
+#   2. go install github.com/doronbehar/pistol/cmd/pistol@latest
