@@ -1,18 +1,18 @@
 function ViewVimTerm --description 'open file either in termpdf or vim'
     # set the extension list for pdf docs
-    set PDFExtension .pdf .djvu .tif
-    set IMGExtension .png .jpeg .jpg
-    set VideoExtension .mp4 .avi .wmv .dat .3gp .ogv .mkv .mpg .mpeg .mov
-    set DocExtension .md .txt .toml .yaml
+    set PDFExt .pdf .djvu .tif
+    set IMGExt .png .jpeg .jpg
+    set VideoExt .mp4 .avi .wmv .dat .3gp .ogv .mkv .mpg .mpeg .mov
+    set DocExt .md .txt .toml .yaml
 
     # check file extension to see whether it is included in the list
-    if contains $(path extension $argv) $PDFExtension
+    if contains $(path extension $argv) $PDFExt
         termpdf.py $argv
-    else if contains $(path extension $argv) $IMGExtension
+    else if contains $(path extension $argv) $IMGExt
         timg --title --center --clear $argv
-    else if contains $(path extension $argv) $VideoExtension
+    else if contains $(path extension $argv) $VideoExt
         timg --title="Ctrl-C to Exit!" --center --clear $argv
-    else if contains $(path extension $argv) $DocExtension
+    else if contains $(path extension $argv) $DocExt
         hx $argv
     else
         nvim $argv
