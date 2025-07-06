@@ -8,6 +8,8 @@ brew install stow
 
 The local of stow is that you first copy all the necessary files that needs to be saved in the ~/dotfiles directory.
 
+The easiest way of doing this is to copy all files to `dotfiles/.config` directory, and remove the unnecessary ones. Then you can stow the rest by specifying the target directory. Note: your wd should be inside the `.config`.
+
 ```
 pwd
 # /Users/jakejing/dotfiles/.config
