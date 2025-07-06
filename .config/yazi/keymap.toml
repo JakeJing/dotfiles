@@ -4,6 +4,11 @@ run  = 'shell "$SHELL" --block'
 desc = "Open shell here"
 
 [[mgr.prepend_keymap]]
+on   = ["z"]
+run  = 'plugin zoxide'
+desc = "zoxide to a folder"
+
+[[mgr.prepend_keymap]]
 on = ["<F5>"]
 run = "refresh"
 desc = "Refresh the current directory"
@@ -17,10 +22,12 @@ desc = "Create a directory"
 on = "<C-k>"
 run = "seek -5"
 desc = "Seek up 5 units in the preview"
+
 [[mgr.prepend_keymap]]
 on = "<C-j>"
 run = "seek 5"
 desc = "Seek down 5 units in the preview"
+
 # Max Preview
 [[mgr.prepend_keymap]]
 on   = "B"
@@ -94,17 +101,18 @@ desc = "Jump bookmark by key"
 # run = "plugin yamb rename_by_fzf"
 # desc = "Rename bookmark by fzf"
 
-[[mgr.prepend_keymap]]
-on = ["f", "g"]
-run = "plugin fr rg"
-desc = "Search file by content (rg)"
+# [[mgr.prepend_keymap]]
+# on = ["f", "g"]
+# run = "plugin fr rg"
+# desc = "Search file by content (rg)"
+
+# [[mgr.prepend_keymap]]
+# on   = [ "f", "s" ]
+# run  = "plugin smart-filter"
+# desc = "Smart filter"
 
 [[mgr.prepend_keymap]]
-on   = [ "f", "s" ]
-run  = "plugin smart-filter"
-desc = "Smart filter"
-[[mgr.prepend_keymap]]
-on   = [ "f", "c" ]
+on   = [ "f" ]
 run  = "plugin jump-to-char"
 desc = "Jump to char"
 

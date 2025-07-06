@@ -36,6 +36,7 @@ C-a = "goto_line_start"
 C-e = "goto_line_end"
 C-x = ":buffer-close"
 y = {y = ["extend_line_below", "yank"]}
+# dd = ["extend_line_below", "delete_selection"]
 N = ["move_next_long_word_start"]
 space = {c = ":theme papercolor-dark"}
 C-w = {C-w = ":buffer-next"}
@@ -48,7 +49,8 @@ C-l = [":new", ":insert-output lf-pick", "split_selection_on_newline", "goto_fil
 
 
 [keys.normal.d]
-d = ["extend_line_below", "delete_selection"]
+# d = ["extend_line", "delete_selection"]
+d = ["extend_to_line_bounds", "delete_selection"]
 e = ["kill_to_line_end"]
 a = ["kill_to_line_start"]
 b = ["delete_word_backward"]
@@ -65,6 +67,11 @@ C-e = "insert_at_line_end"
 
 [keys.insert.j]
 k = "normal_mode" # Maps `jk` to exit insert mode
+j = "normal_mode" # Maps `jk` to exit insert mode
+
+[keys.insert.k]
+j = "normal_mode" # Maps `jk` to exit insert mode
+
 
 [keys.select]
 C-a = "goto_line_start"
