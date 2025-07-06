@@ -1,4 +1,5 @@
 require("full-border"):setup()
+-- init.lua seems to be not working
 -- ~/.config/yazi/init.lua
 -- require("relative-motions"):setup({ show_numbers = "none", show_motion = true })
 require("starship"):setup()
