@@ -6,7 +6,7 @@
 alias nv nvim
 
 # tldr
-alias m tldr
+alias d tldr
 
 # yazi
 alias yz yazi
