@@ -1,8 +1,20 @@
+# shell commands
 [[mgr.prepend_keymap]]
 on   = ["s"]
 run  = 'shell "$SHELL" --block'
-desc = "Open shell here"
+desc = "Open default shell here"
 
+[[mgr.prepend_keymap]]
+on   = [":"]
+run  = 'shell --block --interactive'
+desc = "Open shell interactive"
+
+[[mgr.prepend_keymap]]
+on  = [ "!" ]
+run = 'plugin custom-shell -- fish --interactive --block'
+desc = "Open fish shell interactive"
+
+# movements
 [[mgr.prepend_keymap]]
 on   = ["z"]
 run  = 'plugin zoxide'
@@ -155,15 +167,15 @@ desc  = "Test plugin"
 [[mgr.prepend_keymap]]
 on  = [ ":", "v" ]
 run = '''
-shell 'termpdf.py "$@"' --block --confirm
+shell 'termpdf.py "$@"' --block --interactive
 '''
+# shell 'termpdf.py "$@"' --block --interactive
+# shell 'termpdf.py "$@"' --block --confirm
+
 # run = 'plugin custom-shell -- custom fish "termpdf.py $@"'
 # [[mgr.prepend_keymap]]
 # on  = [ "'", "h" ]
 # run = 'plugin custom-shell history'
-[[mgr.prepend_keymap]]
-on  = [ "!" ]
-run = 'plugin custom-shell -- fish --interactive --block'
 ## Mactagging
 [[mgr.prepend_keymap]]
 on   = [ "b", "a" ]
