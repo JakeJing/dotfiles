@@ -10,6 +10,7 @@ alias m tldr
 
 # yazi
 alias yz yazi
+alias y yazi
 
 # alias nb nb.sh
 # list files
