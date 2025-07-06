@@ -2,7 +2,7 @@
 
 This is used to save and sync my dotfiles.
 
-```
+```{bash}
 brew install stow
 ```
 
