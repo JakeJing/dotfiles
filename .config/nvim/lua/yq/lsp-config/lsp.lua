@@ -7,9 +7,9 @@ local on_attach = function()
 		-- disable update in insert and virtual text for all language servers
 		vim.diagnostic.config({
 			-- update_in_insert = false,
-            -- hide underline and signs at the gutter
-            underline = true,
-            signs = false,
+			-- hide underline and signs at the gutter
+			underline = true,
+			signs = false,
 			virtual_text = false,
 			float = { source = "always" },
 			severity_sort = true,
@@ -41,8 +41,16 @@ local on_attach = function()
 end
 
 ---@diagnostic disable-next-line: undefined-global
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+-- Override the function to provide default encoding
+local original_make_range_params = vim.lsp.util.make_range_params
+vim.lsp.util.make_range_params = function(window, offset_encoding)
+  offset_encoding = offset_encoding or "utf-8"
+  return original_make_range_params(window, offset_encoding)
+end
 
 require("lspconfig")["r_language_server"].setup({
 	on_attach = on_attach,
@@ -64,7 +72,7 @@ require("lspconfig")["emmet_ls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["tsserver"].setup({
+require("lspconfig")["ts_ls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -101,10 +109,10 @@ require("lspconfig")["texlab"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["ltex"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
+-- require("lspconfig")["ltex"].setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- })
 
 require("lspconfig")["bashls"].setup({
 	on_attach = on_attach,

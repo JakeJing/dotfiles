@@ -8,11 +8,14 @@ require("yq.myfuncs") -- load my funcs
 require("yq.lsp-config.lsp")
 require("yq.lsp-config.lspsaga")
 require("yq.lsp-config.completion")
-require("yq.lsp-config.null-ls")
+-- require("yq.lsp-config.null-ls")
 require("yq.lf") -- lf
 require("yq.undo") -- undo
 -- require("yq.quarto")
 -- require("yq.nvim-r") -- no need to load, but autoload for rmd file
+
+-- Suppress specific deprecation warnings
+vim.deprecate = function() end
 
 -- Used to set the shell (a bit problem of open terminal when you type ZZ)
 -- vim.o.shell = 'kitty'

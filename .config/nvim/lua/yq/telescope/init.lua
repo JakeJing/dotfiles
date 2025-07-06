@@ -21,6 +21,11 @@ function telescope_custom_actions.multi_selection_open(prompt_bufnr)
 	telescope_custom_actions._multiopen(prompt_bufnr, "edit")
 end
 
+require("browser_bookmarks").setup({
+	selected_browser = "edge",
+	url_open_command = "open",
+})
+
 -- @TODOUA: create a git history keyword search picker
 -- @TODOUA: add action to commits pickers to yank commit hash
 
@@ -38,10 +43,10 @@ require("telescope").setup({
 		["ui-select"] = {
 			require("telescope.themes").get_cursor(),
 		},
-		bookmarks = {
-			selected_browser = "edge",
-			url_open_command = "open",
-		},
+		-- bookmarks = {
+		-- 	selected_browser = "edge",
+		-- 	url_open_command = "open",
+		-- },
 		command_palette = {
 			{
 				"File",

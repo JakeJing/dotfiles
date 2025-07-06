@@ -11,6 +11,7 @@ abbr -a -- vim nvim
 abbr -a -- ff 'ffmpeg -i'
 abbr -a -- chm 'chmod +x *.R'
 
+
 # abbr for git
 abbr -a -- gia 'git add .'
 abbr -a -- gic 'git commit -m "update readme"'

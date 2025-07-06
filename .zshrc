@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/jakejing/.oh-my-zsh"
 
@@ -88,6 +90,9 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+
+export TERM=xterm-256color
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -105,18 +110,41 @@ source /Users/jakejing/.config/broot/launcher/bash/br
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/jakejing/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/jakejing/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/jakejing/opt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/jakejing/opt/anaconda3/bin:$PATH"
+        export PATH="/opt/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+setopt inc_append_history
+
+# auto_ls function
+# Define the auto_ls function
+auto_ls() {
+    # If the current command line is empty, print a newline and list directory contents
+    if [ -z "$BUFFER" ]; then
+        echo
+        ls
+    fi
+
+    # Accept the current command line
+    zle accept-line
+}
+
+# Bind the auto_ls function to Enter key
+zle -N auto_ls
+bindkey "^M" auto_ls
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export OPENAI_KEY=
+export PATH=$PATH:/usr/local/bin
+export OPENAI_KEY=
+export PATH=$PATH:/usr/local/bin

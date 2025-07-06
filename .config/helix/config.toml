@@ -3,6 +3,7 @@ theme = "papercolor-dark"
 [editor]
 true-color = true
 cursorline = true
+bufferline = "multiple"
 color-modes = true
 soft-wrap.enable = true
 shell = ["fish", "-c"]
@@ -44,6 +45,7 @@ C-l = [":new", ":insert-output lf-pick", "split_selection_on_newline", "goto_fil
 # replace the default after theme with the theme you use
 # open 1 with the open command (l and <left> to open) or more with (<space> to select) then quit
 # all opened files will be opened in helix
+
 
 [keys.normal.d]
 d = ["extend_line_below", "delete_selection"]

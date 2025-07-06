@@ -4,8 +4,7 @@
 name = "python"
 roots = ["pyproject.toml"]
 formatter = { command = "black", args = ["--quiet", "-"] }
-language-server = { command = "pyright-langserver", args = ["--stdio"] }
-config = {} 
+# language-server = { command = "pyright-langserver", args = ["--stdio"] }
 auto-format = true
 
 [[language]]
@@ -16,7 +15,7 @@ auto-format = true
 name = "typescript"
 auto-format = true
 # pass format options according to https://github.com/typescript-language-server/typescript-language-server#workspacedidchangeconfiguration omitting the "[language].format." prefix.
-config = { format = { "semicolons" = "insert", "insertSpaceBeforeFunctionParenthesis" = true } }
+# config = { format = { "semicolons" = "insert", "insertSpaceBeforeFunctionParenthesis" = true } }
 
 [[language]]
 name = "fish"
@@ -41,7 +40,7 @@ shebangs = ["r", "R"]
 roots = []
 comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
-language-server = { command = "R", args = ["--no-echo", "-e", "languageserver::run()"] }
+# language-server = { command = "R", args = ["--no-echo", "-e", "languageserver::run()"] }
 
 [[grammar]]
 name = "r"
@@ -55,7 +54,7 @@ file-types = ["rmd", "Rmd", "qmd"]
 roots = []
 indent = { tab-width = 2, unit = "  " }
 grammar = "markdown"
-language-server = { command = "R", args = ["--no-echo", "-e", "languageserver::run()"] }
+# language-server = { command = "R", args = ["--no-echo", "-e", "languageserver::run()"] }
 
 [[language]]
 name = "javascript"
@@ -65,7 +64,7 @@ file-types = ["js", "mjs", "cjs"]
 shebangs = ["node"]
 roots = []
 comment-token = "//"
-language-server = { command = "typescript-language-server", args = ["--stdio"], language-id = "javascript" }
+# language-server = { command = "typescript-language-server", args = ["--stdio"], language-id = "javascript" }
 indent = { tab-width = 2, unit = "  " }
 
 [language.debugger]

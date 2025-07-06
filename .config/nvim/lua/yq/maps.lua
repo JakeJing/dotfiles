@@ -24,6 +24,7 @@ map("i", "<C-E>", "<ESC>A")
 map("i", "<C-A>", "<ESC>I")
 map("v", "<C-E>", "$")
 map("v", "<C-A>", "0")
+map("n", "ZZ", ":wq<CR>")
 
 -- map ctrl+K to clear to the end
 map("i", "<C-K>", "<ESC>d$a")

@@ -1,7 +1,17 @@
-# neovim editor
-alias nv neovide
+# set default python3 config as arm64
+# alias python3='arch -arm64 /Library/Frameworks/Python.framework/Versions/3.11/bin/python3'
+# alias pip3='arch -arm64 /Library/Frameworks/Python.framework/Versions/3.11/bin/pip3'
 
-alias nb nb.sh
+# neovim editor
+alias nv nvim
+
+# tldr
+alias m tldr
+
+# yazi
+alias yz yazi
+
+# alias nb nb.sh
 # list files
 # alias lsf "clear ; and ls -v --group-directories-first"
 # alias lsd "clear ; and ls -d */"
@@ -10,7 +20,7 @@ alias nb nb.sh
 # alias ls "clear ; and gls --hyperlink=auto --color=auto"
 # alias lsd "clear ; and ls -d */"
 # alias lsa "clear ; and gls -al --group-directories-first --color=auto --hyperlink=auto"
-alias ls "clear ; and exa -s type"
+# alias ls "clear ; and exa -s type"
 alias lsd "clear ; and exa -D --long"
 alias lsa "clear ; and exa --long --header -s type"
 
@@ -18,18 +28,18 @@ alias lsa "clear ; and exa --long --header -s type"
 alias hg='kitty +kitten hyperlinked_grep'
 
 # check the function descriptions
-alias fns "functions"
+alias fns functions
 
 # trash-cli
 alias ts "trash-put -r --trash-dir /Users/jakejing/.config/vifm/Trash/"
 alias sdts "sudo trash"
-alias tsl "trash-list"
-alias tsr "trash-restore"
-alias tsep "trash-empty"
-alias tsrm "trash-rm"
+alias tsl trash-list
+alias tsr trash-restore
+alias tsep trash-empty
+alias rm trash-rm
 
 # lazygit 
-alias lg "lazygit"
+alias lg lazygit
 
 # Quick edits (first go to the dir and open via nvim)
 alias ef 'cd ~/.config/fish; and nvim config.fish'
@@ -65,12 +75,12 @@ alias r radian
 
 # alis for jupyter notebook
 alias jn "jupyter notebook"
-alias jpl "jupyter-lab"
+alias jpl jupyter-lab
 alias jl "julia "
 
 #yank directory and pbpaste
 alias yd 'pwd|pbcopy'
-alias pp 'pbpaste'
+alias pp pbpaste
 
 #kitty
 alias kt 'kitty +kitten '
@@ -81,7 +91,7 @@ alias pdfcombine '/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/
 
 # java apps
 alias beast='sh /Applications/BEAST\ 2.5.1/bin/beast'
-alias densitree='sh /Applications/BEAST\ 2.5.1/bin/densitree'
+alias densitree='sh /Applications/BEAST\ 2.6.4bin/densitree'
 alias beauti='sh /Applications/BEAST\ 2.5.1/bin/beauti'
 alias treeannotator='sh /Applications/BEAST\ 2.5.1/bin/treeannotator'
 

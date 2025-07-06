@@ -65,7 +65,9 @@ packer.startup(function(use)
 	-- 	-- config = function()
 	-- 	-- 	require("yq.config.fzf-lua")
 	-- 	-- end
-	-- })
+	-- }
+	-- )
+
 	use("nvim-treesitter/nvim-treesitter") -- Treesitter Syntax Highlighting
 
 	-- lsp :Mason to view installed formatter
@@ -80,7 +82,11 @@ packer.startup(function(use)
 	-- use({ "tami5/lspsaga.nvim" }) -- icons for LSP diagnostics
 	use({ "vigoux/ltex-ls.nvim", requires = "neovim/nvim-lspconfig" })
 	use("williamboman/mason-lspconfig.nvim")
-	use("jose-elias-alvarez/null-ls.nvim")
+	use('nvimtools/none-ls.nvim')
+	-- Add this BEFORE your null-ls setup
+	-- use("jose-elias-alvarez/null-ls.nvim")
+	use('mfussenegger/nvim-lint')     -- For linting
+  use('stevearc/conform.nvim')      -- For formatting
 	use("onsails/lspkind.nvim")
 	-- use({ "neoclide/coc.nvim", branch = "release" }) -- key conflict with <leader>C resolved by disable it in coc/init.lua
 	use({ "mhartington/formatter.nvim" })
@@ -88,11 +94,12 @@ packer.startup(function(use)
 	-- use("mfussenegger/nvim-dap")
 
 	-- Autocompletion
-	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
-	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/nvim-cmp")
+
 	use({ "roxma/vim-hug-neovim-rpc" })
 	use({ "roxma/nvim-yarp" })
 	use({ "ncm2/ncm2" })
@@ -104,19 +111,33 @@ packer.startup(function(use)
 	use({ "L3MON4D3/LuaSnip", dependencies = { "rafamadriz/friendly-snippets" } })
 	use("onsails/lspkind-nvim")
 	use("jiangmiao/auto-pairs")
+	-- use({
+	-- 	"windwp/nvim-autopairs",
+	-- 	config = function()
+	-- 		require("nvim-autopairs").setup({})
+	-- 	end,
+	-- })
 	-- use("honza/vim-snippets")
 
 	-- Nvim-R
 	use("jalvesaq/cmp-nvim-r")
+
+	-- deprecated and new one with R-nvim
+	-- use({
+	-- 	"jalvesaq/Nvim-R",
+	-- 	config = function()
+	-- 		require("cmp_nvim_r").setup({
+	-- 			filetypes = { "r", "rmd", "quarto" },
+	-- 			doc_width = 20,
+	-- 		})
+	-- 	end,
+	-- })
 	use({
-		"jalvesaq/Nvim-R",
-		config = function()
-			require("cmp_nvim_r").setup({
-				filetypes = { "r", "rmd", "quarto" },
-				doc_width = 20,
-			})
-		end,
+		"R-nvim/R.nvim",
+		lazy = false,
+		version = "~0.1.0",
 	})
+
 	-- quarto
 	use({
 		"quarto-dev/quarto-nvim",

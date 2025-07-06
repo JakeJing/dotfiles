@@ -1,4 +1,5 @@
 -- Important: you can find the code_actions, completions, diagnoistics, formating and hover in https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins
+-- local null_ls = require("none-ls")
 local null_ls = require("null-ls")
 
 local formatting = null_ls.builtins.formatting
