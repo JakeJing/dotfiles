@@ -2,7 +2,7 @@
 
 This is used to save and sync my dotfiles.
 
-```{bash}
+```
 brew install stow
 ```
 
@@ -23,9 +23,9 @@ mkdir vifm && cp ~/.config/vifm/vifmrc vifm
 - stow the file to the target directory
 
 ```
-# create symlinks in the target directory, based on currect directory structure. **Note** vifm at the end is just the package name.
-
-stow --adopt --target ~/.config/vifm vifm
+# create symlinks in the target directory, based on currect directory structure. **Note** vifm at the end is just the package name. You can pick up your own name
+stow -h
+stow --adopt --target ~/.config/vifm pkg-vifm
 ```
 
 - git update
