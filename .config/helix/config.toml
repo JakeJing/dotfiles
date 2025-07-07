@@ -41,7 +41,7 @@ backspace = "delete_char_backward"
 # backspace = ["delete_selection"]
 B = ["select_mode", "move_prev_word_start", "select_mode"]
 W = ["select_mode", "move_next_word_end"]
-
+C-y = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh open %{buffer_name}"
 y = {y = ["extend_line_below", "yank"]}
 # dd = ["extend_line_below", "delete_selection"]
 N = ["move_next_long_word_start"]
