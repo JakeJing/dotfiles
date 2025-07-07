@@ -98,10 +98,10 @@ run = "plugin parent-arrow -1"
 on  = [ "J" ]
 run = "plugin parent-arrow 1"
 
-[[mgr.prepend_keymap]]
-on   = [ "<C-p>" ]
-run  = "plugin smart-paste"
-desc = "Paste into the hovered directory or CWD"
+# [[mgr.prepend_keymap]]
+# on   = [ "<C-p>" ]
+# run  = "plugin smart-paste"
+# desc = "Paste into the hovered directory or CWD"
 
 [[mgr.prepend_keymap]]
 on = [ "m", "a" ]
@@ -197,9 +197,9 @@ desc  = "Test plugin"
 [[mgr.prepend_keymap]]
 on  = [ ":", "v" ]
 run = '''
-shell 'termpdf.py "$@"' --block --interactive
+shell 'termpdf.py "$@"' --block --confirm
 '''
-# shell 'termpdf.py "$@"' --block --interactive
+# shell 'termpdf.py "$@"' --block --interactive # need confirmation
 # shell 'termpdf.py "$@"' --block --confirm
 
 # run = 'plugin custom-shell -- custom fish "termpdf.py $@"'
