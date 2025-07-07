@@ -1,3 +1,8 @@
+[[mgr.prepend_keymap]]
+on  = "q"
+run = "plugin confirm-quit"
+desc = "confirmation when quite multiple tabs"
+
 # shell commands
 [[mgr.prepend_keymap]]
 on   = ["s"]
@@ -5,9 +10,34 @@ run  = 'shell "$SHELL" --block'
 desc = "Open default shell here"
 
 [[mgr.prepend_keymap]]
-on   = [":"]
-run  = 'shell --block --interactive'
-desc = "Open shell interactive"
+on  = ["y", "y"]
+run = [ 'shell -- for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list', "yank" ]
+desc = "Copy selected files to the system clipboard while yanking"
+
+[[mgr.prepend_keymap]]
+on = [ "y", "f" ]
+run = "copy path"
+desc = "Copy the file path"
+
+# [[mgr.prepend_keymap]]
+# on = [ "y", "y" ]
+# run = "yank"
+# desc = "Yank selected files (copy)"
+
+[[mgr.prepend_keymap]]
+on = [ "y", "n" ]
+run = "copy filename"
+desc = "Copy the file filename"
+
+[[mgr.prepend_keymap]]
+on = "<C-x>"
+run = "close"
+desc = "Close the current tab, or quit if it's last"
+
+# [[mgr.prepend_keymap]]
+# on   = [":"]
+# run  = 'shell --block --interactive'
+# desc = "Open shell interactive"
 
 [[mgr.prepend_keymap]]
 on  = [ "!" ]
@@ -73,10 +103,10 @@ on   = [ "<C-p>" ]
 run  = "plugin smart-paste"
 desc = "Paste into the hovered directory or CWD"
 
-# [[mgr.prepend_keymap]]
-# on = [ "u", "a" ]
-# run = "plugin yamb save"
-# desc = "Add bookmark"
+[[mgr.prepend_keymap]]
+on = [ "m", "a" ]
+run = "plugin yamb save"
+desc = "Add bookmark"
 
 [[mgr.prepend_keymap]]
 on = [ "'" ]
@@ -88,30 +118,30 @@ desc = "Jump bookmark by key"
 # run = "plugin yamb jump_by_fzf"
 # desc = "Jump bookmark by fzf"
 
-# [[mgr.prepend_keymap]]
-# on = [ "u", "d" ]
-# run = "plugin yamb delete_by_key"
-# desc = "Delete bookmark by key"
+[[mgr.prepend_keymap]]
+on = [ "m", "d" ]
+run = "plugin yamb delete_by_key"
+desc = "Delete bookmark by key"
 
-# [[mgr.prepend_keymap]]
-# on = [ "u", "D" ]
-# run = "plugin yamb delete_by_fzf"
-# desc = "Delete bookmark by fzf"
+[[mgr.prepend_keymap]]
+on = [ "m", "D" ]
+run = "plugin yamb delete_by_fzf"
+desc = "Delete bookmark by fzf"
 
-# [[mgr.prepend_keymap]]
-# on = [ "u", "A" ]
-# run = "plugin yamb delete_all"
-# desc = "Delete all bookmarks"
+[[mgr.prepend_keymap]]
+on = [ "m", "A" ]
+run = "plugin yamb delete_all"
+desc = "Delete all bookmarks"
 
-# [[mgr.prepend_keymap]]
-# on = [ "u", "r" ]
-# run = "plugin yamb rename_by_key"
-# desc = "Rename bookmark by key"
+[[mgr.prepend_keymap]]
+on = [ "m", "r" ]
+run = "plugin yamb rename_by_key"
+desc = "Rename bookmark by key"
 
-# [[mgr.prepend_keymap]]
-# on = [ "u", "R" ]
-# run = "plugin yamb rename_by_fzf"
-# desc = "Rename bookmark by fzf"
+[[mgr.prepend_keymap]]
+on = [ "m", "R" ]
+run = "plugin yamb rename_by_fzf"
+desc = "Rename bookmark by fzf"
 
 # [[mgr.prepend_keymap]]
 # on = ["f", "g"]
@@ -266,12 +296,12 @@ run = '''
 # run  = "plugin vcs-files"
 # desc = "Show Git file changes"
 
-[[mgr.prepend_keymap]]
-on   = "+"
-run  = "plugin zoom 1"
-desc = "Zoom in hovered file"
+# [[mgr.prepend_keymap]]
+# on   = "+"
+# run  = "plugin zoom 1"
+# desc = "Zoom in hovered file"
 
-[[mgr.prepend_keymap]]
-on   = "-"
-run  = "plugin zoom -1"
-desc = "Zoom out hovered file"
+# [[mgr.prepend_keymap]]
+# on   = "-"
+# run  = "plugin zoom -1"
+# desc = "Zoom out hovered file"

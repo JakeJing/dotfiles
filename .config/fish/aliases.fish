@@ -11,6 +11,7 @@ alias d tldr
 # yazi
 alias yz yazi
 alias y yazi
+alias a yazi
 
 # alias nb nb.sh
 # list files

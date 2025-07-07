@@ -5,6 +5,7 @@ true-color = true
 cursorline = true
 bufferline = "multiple"
 color-modes = true
+line-number = "relative"
 soft-wrap.enable = true
 shell = ["fish", "-c"]
 auto-save = true
@@ -31,10 +32,16 @@ mode.select = "SELECT"
 
 [keys.normal]
 G = "goto_file_end"
-X = "extend_line_above"
+x = ["extend_line_below", "select_mode"]
+X = ["extend_line_above", "select_mode"]
 C-a = "goto_line_start"
 C-e = "goto_line_end"
 C-x = ":buffer-close"
+backspace = "delete_char_backward"
+# backspace = ["delete_selection"]
+B = ["select_mode", "move_prev_word_start", "select_mode"]
+W = ["select_mode", "move_next_word_end"]
+
 y = {y = ["extend_line_below", "yank"]}
 # dd = ["extend_line_below", "delete_selection"]
 N = ["move_next_long_word_start"]
@@ -48,13 +55,13 @@ C-l = [":new", ":insert-output lf-pick", "split_selection_on_newline", "goto_fil
 # all opened files will be opened in helix
 
 
-[keys.normal.d]
-# d = ["extend_line", "delete_selection"]
-d = ["extend_to_line_bounds", "delete_selection"]
-e = ["kill_to_line_end"]
-a = ["kill_to_line_start"]
-b = ["delete_word_backward"]
-n = ["delete_word_forward"]
+# [keys.normal.d]
+# # d = ["extend_line", "delete_selection"]
+# d = ["extend_to_line_bounds", "delete_selection"]
+# e = ["kill_to_line_end"]
+# a = ["kill_to_line_start"]
+# b = ["delete_word_backward"]
+# n = ["delete_word_forward"]
 
 [keys.normal.Z]
 Z = ":write-quit"
@@ -65,15 +72,16 @@ Q = ":quit"
 C-a = "insert_at_line_start"
 C-e = "insert_at_line_end"
 
-[keys.insert.j]
-k = "normal_mode" # Maps `jk` to exit insert mode
-j = "normal_mode" # Maps `jk` to exit insert mode
+# [keys.insert.j]
+# k = "normal_mode" # Maps `jk` to exit insert mode
+# j = "normal_mode" # Maps `jk` to exit insert mode
 
-[keys.insert.k]
-j = "normal_mode" # Maps `jk` to exit insert mode
+# [keys.insert.k]
+# j = "normal_mode" # Maps `jk` to exit insert mode
 
 
 [keys.select]
 C-a = "goto_line_start"
 C-e = "goto_line_end"
+backspace = "delete_selection"
 # G = "goto_file_end"

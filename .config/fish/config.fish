@@ -64,3 +64,4 @@ end
 # Added by Windsurf
 fish_add_path /Users/jakejing/.codeium/windsurf/bin
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
