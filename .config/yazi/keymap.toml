@@ -1,4 +1,24 @@
 [[mgr.prepend_keymap]]
+on  = [ "!" ]
+run  = 'shell "fish -c \" $0\"" --block --interactive --cursor=9'
+# run = "plugin custom-shell -- custom fish --block --interactive"
+# run  = "plugin shell --args='fish --block'"
+desc = "Open fish shell interactive"
+
+[[mgr.prepend_keymap]]
+on  = [ ":", "v" ]
+run = '''
+shell 'termpdf.py "$@"' --block --confirm
+'''
+# shell 'termpdf.py "$@"' --block --interactive # need confirmation
+# shell 'termpdf.py "$@"' --block --confirm
+
+[[mgr.prepend_keymap]]
+on   = [";"]
+run  = 'shell --block --interactive'
+desc = "Open shell interactive"
+
+[[mgr.prepend_keymap]]
 on  = "q"
 run = "plugin confirm-quit"
 desc = "confirmation when quite multiple tabs"
@@ -33,16 +53,6 @@ desc = "Copy the file filename"
 on = "<C-x>"
 run = "close"
 desc = "Close the current tab, or quit if it's last"
-
-# [[mgr.prepend_keymap]]
-# on   = [":"]
-# run  = 'shell --block --interactive'
-# desc = "Open shell interactive"
-
-[[mgr.prepend_keymap]]
-on  = [ "!" ]
-run = 'plugin custom-shell -- fish --interactive --block'
-desc = "Open fish shell interactive"
 
 # movements
 [[mgr.prepend_keymap]]
@@ -194,13 +204,6 @@ desc  = "Test plugin"
 # [[mgr.prepend_keymap]]
 # on  = [ "'", "l"]
 # run = 'plugin custom-shell -- custom zsh "lazygit"'
-[[mgr.prepend_keymap]]
-on  = [ ":", "v" ]
-run = '''
-shell 'termpdf.py "$@"' --block --confirm
-'''
-# shell 'termpdf.py "$@"' --block --interactive # need confirmation
-# shell 'termpdf.py "$@"' --block --confirm
 
 # run = 'plugin custom-shell -- custom fish "termpdf.py $@"'
 # [[mgr.prepend_keymap]]

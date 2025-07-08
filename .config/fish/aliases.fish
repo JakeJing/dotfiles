@@ -2,6 +2,12 @@
 # alias python3='arch -arm64 /Library/Frameworks/Python.framework/Versions/3.11/bin/python3'
 # alias pip3='arch -arm64 /Library/Frameworks/Python.framework/Versions/3.11/bin/pip3'
 
+# eza a modern replacemenet for ls
+alias ls='eza -lh --group-directories-first --icons --hyperlink'
+alias lsa='eza -alh --group-directories-first --icons --hyperlink'
+alias lt='eza --tree --level=2 --long --icons --git'
+alias lta='eza --tree --level=2 --long --icons --git -a'
+
 # neovim editor
 alias nv nvim
 
@@ -12,6 +18,9 @@ alias d tldr
 alias yz yazi
 alias y yazi
 alias a yazi
+
+# zellij
+alias j zellij
 
 # alias nb nb.sh
 # list files
