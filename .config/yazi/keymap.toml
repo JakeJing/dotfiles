@@ -41,10 +41,10 @@ desc = "Open default shell here"
 # run = [ 'shell -- for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list', "yank" ]
 # desc = "Copy selected files to the system clipboard while yanking"
 
-[[mgr.append_keymap]]
-on = [ "y", "f" ]
-run = "copy path"
-desc = "Copy the file path"
+# [[mgr.append_keymap]]
+# on = [ "y", "f" ]
+# run = "copy path"
+# desc = "Copy the file path"
 
 # [[mgr.prepend_keymap]]
 # on = [ "y", "y" ]
