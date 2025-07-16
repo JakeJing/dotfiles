@@ -24,7 +24,7 @@ function new --description 'Create a new R or markdown template file'
             cp /Users/jakejing/git/knitr-markdown-engines/templates/Quarto-markdown-script.qmd $argv
             quarto add JakeJing/include-code-files
             mkdir css
-            cp /Users/jakejing/git/knitr-markdown-engines/templates/shadenote/shadenote.css css/$argv
+            cp /Users/jakejing/git/knitr-markdown-engines/templates/shadenote/shadenote.css css/
         case '*'
             echo 'filename is not correct!'
     end

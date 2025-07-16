@@ -1,8 +1,8 @@
 [[mgr.prepend_keymap]]
 on  = [ "!" ]
-run  = 'shell "fish -c \" $0\"" --block --interactive --cursor=9'
-# run = "plugin custom-shell -- custom fish --block --interactive"
-# run  = "plugin shell --args='fish --block'"
+run  = 'shell "fish -c \" $0\"" --block --interactive --cursor=9' # it works
+# run = "plugin custom-shell -- auto" # fish shell works, $0 is not passed
+# run  = "plugin shell --args='$SHELL'" # $SHELL specifies the default shell, not working
 desc = "Open fish shell interactive"
 
 [[mgr.prepend_keymap]]
@@ -10,6 +10,8 @@ on  = [ ":", "v" ]
 run = '''
 shell 'termpdf.py "$@"' --block --confirm
 '''
+desc = "preview pdf in termpdf"
+
 # shell 'termpdf.py "$@"' --block --interactive # need confirmation
 # shell 'termpdf.py "$@"' --block --confirm
 
@@ -17,6 +19,11 @@ shell 'termpdf.py "$@"' --block --confirm
 on   = [";"]
 run  = 'shell --block --interactive'
 desc = "Open shell interactive"
+
+[[mgr.prepend_keymap]]
+on = "d"
+run = "shell 'trash-put -r --trash-dir /Users/jakejing/.config/vifm/Trash/ \"$@\"'"
+desc = "Trash selected files"
 
 [[mgr.prepend_keymap]]
 on  = "q"
@@ -29,12 +36,12 @@ on   = ["s"]
 run  = 'shell "$SHELL" --block'
 desc = "Open default shell here"
 
-[[mgr.prepend_keymap]]
-on  = ["y", "y"]
-run = [ 'shell -- for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list', "yank" ]
-desc = "Copy selected files to the system clipboard while yanking"
+# [[mgr.prepend_keymap]]
+# on  = ["y", "y"]
+# run = [ 'shell -- for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list', "yank" ]
+# desc = "Copy selected files to the system clipboard while yanking"
 
-[[mgr.prepend_keymap]]
+[[mgr.append_keymap]]
 on = [ "y", "f" ]
 run = "copy path"
 desc = "Copy the file path"
@@ -44,7 +51,7 @@ desc = "Copy the file path"
 # run = "yank"
 # desc = "Yank selected files (copy)"
 
-[[mgr.prepend_keymap]]
+[[mgr.append_keymap]]
 on = [ "y", "n" ]
 run = "copy filename"
 desc = "Copy the file filename"

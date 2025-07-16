@@ -8,6 +8,9 @@ alias lsa='eza -alh --group-directories-first --icons --hyperlink'
 alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='eza --tree --level=2 --long --icons --git -a'
 
+# windsurf
+alias w windsurf
+
 # neovim editor
 alias nv nvim
 
