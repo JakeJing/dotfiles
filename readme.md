@@ -1,5 +1,7 @@
 # Dotfiles 
 
+**Note:** this dotfoles is located in the home directory.
+
 This is used to save and sync my dotfiles.
 
 ```

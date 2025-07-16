@@ -79,3 +79,12 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.s
+
+
+set -gx LDFLAGS "-L/opt/homebrew/opt/libffi/lib"
+set -gx CPPFLAGS "-I/opt/homebrew/opt/libffi/include"
+
+set -gx PKG_CONFIG_PATH "/opt/homebrew/opt/libffi/lib/pkgconfig"
