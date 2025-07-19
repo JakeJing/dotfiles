@@ -8,7 +8,7 @@ set -g -x PATH /opt/homebrew/bin /usr/local/bin /usr/local/lib /Users/jakejing/.
 
 # Setting PATH for Python 3.11
 # The original version is saved in /Users/jakejing/.config/fish/config.fish.pysave
-set -x PATH "/opt/homebrew/bin" "$PATH"
+set -x PATH /opt/homebrew/bin "$PATH"
 
 # -L/usr/local/opt/llvm/lib
 
@@ -53,7 +53,6 @@ test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell
 
 set -x LF_COLORS "~/Documents=01;31 ~/Downloads=01;31 ~/.local/share=01;31 ~/.config/lf/lfrc=31 .git/=01;32 .git*=32 *.gitignore=32 *Makefile=32 README.*=33 *.txt=34 *.md=34 ln=01;36 di=01;34 ex=01;32"
 
-
 zoxide init fish | source
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -64,4 +63,3 @@ end
 # Added by Windsurf
 fish_add_path /Users/jakejing/.codeium/windsurf/bin
 eval "$(/opt/homebrew/bin/brew shellenv)"
-

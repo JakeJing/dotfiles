@@ -14,6 +14,9 @@ alias w windsurf
 # neovim editor
 alias nv nvim
 
+# helix
+alias eh "cd /Users/jakejing/.config/helix; hx config.toml"
+
 # tldr
 alias d tldr
 

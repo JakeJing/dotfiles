@@ -8,7 +8,6 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 # : Flavor {{{
-
 [flavor]
 light = "catppuccin-mocha"
 dark = "catppuccin-mocha"
