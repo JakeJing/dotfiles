@@ -3,6 +3,7 @@ theme = Arthur
 font-family = Hack Nerd Font
 font-size = 22
 
+
 # The template does not set any default options, since Ghostty ships
 # with sensible defaults for all options. Users should only need to set
 # options that they want to change from the default.

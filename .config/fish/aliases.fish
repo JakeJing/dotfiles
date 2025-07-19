@@ -25,6 +25,11 @@ alias a yazi
 # zellij
 alias j zellij
 
+# quarto
+alias qv "quarto preview"
+alias qp "quarto publish gh-pages"
+alias qr "quarto render"
+
 # alias nb nb.sh
 # list files
 # alias lsf "clear ; and ls -v --group-directories-first"
@@ -59,9 +64,10 @@ alias lg lazygit
 alias ef 'cd ~/.config/fish; and nvim config.fish'
 # alias ev 'cd ~/.config/nvim/lua/yq; and nvim maps.lua end' # replaced with ev.fish for better performance
 alias evf 'cd ~/.config/vifm; and nvim vifmrc'
-alias eb 'nvim ~/.bash_profile'
+alias eb 'hx ~/.bash_profile'
 alias ek 'cd ~/.config/kitty; and nvim kitty.conf'
 alias er 'nvim ~/.Rprofile'
+alias eg 'hx ~/.config/ghostty/config'
 
 # Quick go
 alias gd 'pushd ~/Documents/ ; and ls'
