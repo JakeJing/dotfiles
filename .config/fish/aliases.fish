@@ -58,7 +58,7 @@ alias sdts "sudo trash"
 alias tsl trash-list
 alias tsr trash-restore
 alias tsep trash-empty
-alias rm trash-rm
+# alias rm trash-rm
 
 # lazygit 
 alias lg lazygit

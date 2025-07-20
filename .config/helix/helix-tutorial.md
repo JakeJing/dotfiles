@@ -13,8 +13,6 @@
 - gr: go to reference
 - gd: go to definition
 
-[[##Navigation]]
-
 ## Deletion 
 
 - c: change a char or selection

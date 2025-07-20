@@ -54,20 +54,33 @@ C-w = {C-w = ":buffer-next"}
 C-l = [":new", ":insert-output lf-pick", "split_selection_on_newline", "goto_file", "goto_last_modified_file", ":buffer-close!", ":buffer-close!", ":reload"]
 
 # open yazi in helix 
-# can only open files in the same dir
-"C-y" = [
-  ':sh rm -f .files2open',
-  ':set mouse false',
-  ':insert-output yazi "%{buffer_name}" --chooser-file=.files2open',
+# works in different working space (comment the rm func in fish)
+# a new empty file in the buffer will be created when nothing is selected
+C-y = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
   ':redraw',
-  ':set mouse true',
-  ':open .files2open',
+  ':open /tmp/unique-file',
   'select_all',
   'split_selection_on_newline',
   'goto_file',
-  ':buffer-close! .files2open',
-  # ":buffer-close"
+  ':buffer-close! /tmp/unique-file'
 ]
+
+# can only open files in the same dir
+# "C-y" = [
+#   ':sh rm -f .files2open',
+#   ':set mouse false',
+#   ':insert-output yazi "%{buffer_name}" --chooser-file=.files2open',
+#   ':redraw',
+#   ':set mouse true',
+#   ':open .files2open',
+#   'select_all',
+#   'split_selection_on_newline',
+#   'goto_file',
+#   ':buffer-close! .files2open',
+#   # ":buffer-close"
+# ]
 
 # open in the default txt editor
 # C-y = [
