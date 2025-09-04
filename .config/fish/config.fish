@@ -4,7 +4,7 @@
 set -x LC_ALL en_US.UTF-8
 set -x BEAST_PACKAGE_PATH "/Users/jakejing/Library/Application\ Support/BEAST/2.5"
 
-set -g -x PATH /opt/homebrew/bin /usr/local/bin /usr/local/lib /Users/jakejing/.cargo/bin /opt/local/bin/ /Library/TeX/texbin /opt/local/bin /usr/bin /Applications/Julia-1.7.app/Contents/Resources/julia/bin /Users/jakejing/.config/vifm/scripts/ /usr/local/share/ /usr/local/share/fish/completions/ /Users/jakejing/.script/ /usr/local/bin/jupyter-nbextension /Users/jakejing/.nvm /Users/jakejing/switchdrive/uralic/TuLeD /Applications/BEAST\ 3.5.1/bin /Library/PostgreSQL/13/bin /Applications/Skim.app/Contents/MacOS /Applications/Skim.app/Contents/SharedSupport /usr/local/opt/ruby/bin /Users/jakejing/Library/Application\ Support/BEAST/2.5 /usr/local/bin/ltex-ls-16.0.0/bin /Applications/WezTerm.app/Contents/MacOS/ /Applications/kitty.app/Contents/MacOS/ /Users/jakejing/go/bin/ $PATH
+set -g -x PATH /opt/homebrew/bin /usr/local/bin /usr/local/lib /Users/jakejing/.local/bin /Users/jakejing/.duckdb/cli/latest /Users/jakejing/.cargo/bin /opt/local/bin/ /Library/TeX/texbin /opt/local/bin /usr/bin /Applications/Julia-1.7.app/Contents/Resources/julia/bin /Users/jakejing/.config/vifm/scripts/ /usr/local/share/ /usr/local/share/fish/completions/ /Users/jakejing/.script/ /usr/local/bin/jupyter-nbextension /Users/jakejing/.nvm /Users/jakejing/switchdrive/uralic/TuLeD /Applications/BEAST\ 3.5.1/bin /Library/PostgreSQL/13/bin /Applications/Skim.app/Contents/MacOS /Applications/Skim.app/Contents/SharedSupport /usr/local/opt/ruby/bin /Users/jakejing/Library/Application\ Support/BEAST/2.5 /usr/local/bin/ltex-ls-16.0.0/bin /Applications/WezTerm.app/Contents/MacOS/ /Applications/kitty.app/Contents/MacOS/ /Users/jakejing/go/bin/ $PATH
 
 # Setting PATH for Python 3.11
 # The original version is saved in /Users/jakejing/.config/fish/config.fish.pysave
@@ -63,3 +63,4 @@ end
 # Added by Windsurf
 fish_add_path /Users/jakejing/.codeium/windsurf/bin
 eval "$(/opt/homebrew/bin/brew shellenv)"
+fish_add_path $HOME/.local/bin

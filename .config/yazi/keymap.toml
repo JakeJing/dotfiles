@@ -5,6 +5,29 @@ run  = 'shell "fish -c \" $0\"" --block --interactive --cursor=9' # it works
 # run  = "plugin shell --args='$SHELL'" # $SHELL specifies the default shell, not working
 desc = "Open fish shell interactive"
 
+
+# for duckdb keymaps
+[[manager.prepend_keymap]]
+on = "H"
+run = "plugin duckdb -1"
+desc = "Scroll one column to the left"
+
+[[manager.prepend_keymap]]
+on = "L"
+run = "plugin duckdb +1"
+desc = "Scroll one column to the right"
+
+[[manager.prepend_keymap]]
+on = ["g", "o"]
+run = "plugin duckdb -open"
+desc = "open with duckdb"
+
+[[manager.prepend_keymap]]
+on = ["g", "u"]
+run = "plugin duckdb -ui"
+desc = "open with duckdb ui"
+
+
 [[mgr.prepend_keymap]]
 on  = [ ":", "v" ]
 run = '''
@@ -14,6 +37,13 @@ desc = "preview pdf in termpdf"
 
 # shell 'termpdf.py "$@"' --block --interactive # need confirmation
 # shell 'termpdf.py "$@"' --block --confirm
+
+[[mgr.prepend_keymap]]
+on  = [ "d" ]
+run = '''
+shell 'trash-put "$@"' --block
+'''
+desc = "trash-put"
 
 [[mgr.prepend_keymap]]
 on   = [";"]

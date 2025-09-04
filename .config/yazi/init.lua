@@ -1,6 +1,13 @@
 require("full-border"):setup()
 -- require("starship"):setup()
-
+-- require("duckdb"):setup()
+require("duckdb"):setup({
+  mode = "standard",            -- Default: "summarized"
+  cache_size = 1000,                          -- Default: 500
+  row_id = true,             -- Default: false
+  minmax_column_width = 21,                  -- Default: 21
+  column_fit_factor = 10.0                  -- Default: 10.0
+})
 require("custom-shell"):setup({
 	save_history = true,
 	history_file = "default",

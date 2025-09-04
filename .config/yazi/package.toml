@@ -103,6 +103,11 @@ use = "yazi-rs/plugins:zoom"
 rev = "7c174cc"
 hash = "23d704e18d864036fc65c188bc6b2e47"
 
+[[plugin.deps]]
+use = "wylie102/duckdb"
+rev = "3f8c863"
+hash = "87b9233a74325e95011670ed20bbd0d4"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "d04a298"

@@ -8,6 +8,9 @@ alias lsa='eza -alh --group-directories-first --icons --hyperlink'
 alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='eza --tree --level=2 --long --icons --git -a'
 
+# screecapture
+# alias sc='screencapture -i -P'
+
 # windsurf
 alias w windsurf
 
@@ -64,11 +67,11 @@ alias tsep trash-empty
 alias lg lazygit
 
 # Quick edits (first go to the dir and open via nvim)
-alias ef 'cd ~/.config/fish; and nvim config.fish'
+alias ef 'cd ~/.config/fish; and hx config.fish'
 # alias ev 'cd ~/.config/nvim/lua/yq; and nvim maps.lua end' # replaced with ev.fish for better performance
-alias evf 'cd ~/.config/vifm; and nvim vifmrc'
+alias evf 'cd ~/.config/vifm; and hx vifmrc'
 alias eb 'hx ~/.bash_profile'
-alias ek 'cd ~/.config/kitty; and nvim kitty.conf'
+alias ek 'cd ~/.config/kitty; and hx kitty.conf'
 alias er 'nvim ~/.Rprofile'
 alias eg 'hx ~/.config/ghostty/config'
 

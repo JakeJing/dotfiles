@@ -46,9 +46,9 @@ function trash -d "Moves files and folders to macOS trash"
     end
 
     switch $argv[1]
-        case "-h" "--help"
+        case -h --help
             __trash_usage
-        case "-v" "--version"
+        case -v --version
             __trash_version
         case "*"
             __trash $argv
