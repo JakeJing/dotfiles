@@ -6,6 +6,17 @@ run  = 'shell "fish -c \" $0\"" --block --interactive --cursor=9' # it works
 desc = "Open fish shell interactive"
 
 
+# ripgrep search
+# [[mgr.prepend_keymap]]
+# on = ["F"]
+# run = "plugin fr rg"
+# desc = "Search file by content (rg)"
+
+[[mgr.prepend_keymap]]
+on = ["F"]
+run = "plugin fr rga"
+desc = "Search file by content (rga)"
+
 # for duckdb keymaps
 [[manager.prepend_keymap]]
 on = "H"

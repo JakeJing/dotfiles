@@ -8,6 +8,36 @@ require("duckdb"):setup({
   minmax_column_width = 21,                  -- Default: 21
   column_fit_factor = 10.0                  -- Default: 10.0
 })
+
+require("fr"):setup {
+    fzf = [[--info-command='echo -e "$FZF_INFO 💛"' --no-scrollbar]],
+    rg = "--colors 'line:fg:red' --colors 'match:style:nobold'",
+    bat = "--style 'header,grid'",
+    rga = {
+        "--follow",
+        "--hidden",
+        "--no-ignore",
+        "--glob",
+        "'!.git'",
+        "--glob",
+        "!'.venv'",
+        "--glob",
+        "'!node_modules'",
+        "--glob",
+        "'!.history'",
+        "--glob",
+        "'!.Rproj.user'",
+        "--glob",
+        "'!.ipynb_checkpoints'",
+    },
+    rga_preview = {
+        "--colors 'line:fg:red'"
+            .. " --colors 'match:fg:blue'"
+            .. " --colors 'match:bg:black'"
+            .. " --colors 'match:style:nobold'",
+    },
+}
+
 require("custom-shell"):setup({
 	save_history = true,
 	history_file = "default",
