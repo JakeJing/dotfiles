@@ -116,10 +116,10 @@ alias icat="kitty +kitten icat"
 alias pdfcombine '/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
 
 # java apps
-alias beast='sh /Applications/BEAST\ 2.5.1/bin/beast'
-alias densitree='sh /Applications/BEAST\ 2.6.4bin/densitree'
-alias beauti='sh /Applications/BEAST\ 2.5.1/bin/beauti'
-alias treeannotator='sh /Applications/BEAST\ 2.5.1/bin/treeannotator'
+alias beast='sh /Applications/BEAST\ 2.6.4/bin/beast'
+alias densitree='sh /Applications/BEAST\ 2.6.4/bin/densitree'
+alias beauti='sh /Applications/BEAST\ 2.6.4/bin/beauti'
+alias treeannotator='sh /Applications/BEAST\ 2.6.4/bin/treeannotator'
 
 alias figtree 'java -jar /Applications/FigTree\ v1.4.4.app/Contents/Resources/Java/figtree.jar'
 

@@ -17,6 +17,13 @@ on = ["F"]
 run = "plugin fr rga"
 desc = "Search file by content (rga)"
 
+# [[mgr.prepend_keymap]]
+# on   = ["/"]
+# run = '''
+# shell 'rg  "$@"' --interactive --cursor=3
+# '''
+# desc = "ripgrep search shell interactive"
+
 # for duckdb keymaps
 [[manager.prepend_keymap]]
 on = "H"

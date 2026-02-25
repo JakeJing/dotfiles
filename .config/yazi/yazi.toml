@@ -33,6 +33,14 @@ open = [
     { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
 
+[[opener.bulk-rename]]
+run   = 'hx "$@"'
+block = true
+
+[[open.prepend_rules]]
+name = "bulk-rename.txt"
+use  = "bulk-rename"
+
 [plugin]
 prepend_previewers = [
     { mime = "application/*zip", run = "ouch" },
