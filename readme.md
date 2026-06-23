@@ -29,7 +29,8 @@ mkdir vifm && cp ~/.config/vifm/vifmrc vifm
 ```
 # create symlinks in the target directory, based on currect directory structure. **Note** vifm at the end is just the package name. You can pick up your own name
 stow -h
-stow --adopt --target ~/.config/vifm pkg-vifm
+stow --adopt --target ~/.config/vifm pkg-vifm # update the vifm dir to be sync
+stow --adopt --target ~/.config/fish/functions fish # update the fish dir to be sync
 ```
 
 - git update
