@@ -1,1 +1,0 @@
-../../dotfiles/.config/yazi/init.lua
