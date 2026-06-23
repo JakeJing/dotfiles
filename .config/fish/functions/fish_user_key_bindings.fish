@@ -1,1 +1,7 @@
-../../../dotfiles/.config/fish/functions/fish_user_key_bindings.fish
+# function fish_user_key_bindings
+#   fzf_key_bindings
+# end
+#function fish_user_key_bindings
+#  fish_vi_key_bindings
+#end
+# fzf_key_bindings

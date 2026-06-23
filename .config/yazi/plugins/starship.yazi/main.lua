@@ -7,9 +7,7 @@
 
 local save = ya.sync(function(st, _cwd, output)
     st.output = output
-    -- Support for versions later than v25.5.31 (not yet a full release as of writing this comment)
-    local render = ui.render or ya.render
-    render()
+    ya.render()
 end)
 
 -- Helper function for accessing the `config_file` state variable

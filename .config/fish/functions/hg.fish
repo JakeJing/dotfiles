@@ -1,1 +1,3 @@
-../../../dotfiles/.config/fish/functions/hg.fish
+function hg --wraps rg
+    kitty +kitten hyperlinked_grep $argv
+end

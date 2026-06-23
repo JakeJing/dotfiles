@@ -1,1 +1,206 @@
-../../dotfiles/.config/yazi/theme.toml
+# If the user's terminal is in dark mode, Yazi will load `theme-dark.toml` on startup; otherwise, `theme-light.toml`.
+# You can override any parts of them that are not related to the dark/light mode in your own `theme.toml`.
+
+# If you want to dynamically override their content based on dark/light mode, you can specify two different flavors
+# for dark and light modes under `[flavor]`, and do so in those flavors instead.
+# "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+
+schema = "https://yazi-rs.github.io/schemas/theme.json"
+
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# : Flavor {{{
+[flavor]
+light = "catppuccin-mocha"
+dark = "catppuccin-mocha"
+
+# : }}}
+
+# : Manager {{{
+
+[manager]
+cwd = { fg = "cyan" }
+
+# Hovered
+hovered         = { reversed = true }
+preview_hovered = { underline = false }
+
+# : Icons {{{
+
+[icon]
+
+# Default icon when no rule matches
+default = { text = "󰈔" }
+
+# Directory defaults
+[icon.dir]
+default = { text = "󰉋" }
+
+# Special directory rules
+[icon.dir."\\.config"]
+text = ""
+
+[icon.dir."\\.git"]
+text = ""
+
+[icon.dir."Desktop"]
+text = ""
+
+[icon.dir."Development"]
+text = ""
+
+[icon.dir."Documents"]
+text = ""
+
+[icon.dir."Downloads"]
+text = ""
+
+[icon.dir."Library"]
+text = ""
+
+[icon.dir."Movies"]
+text = ""
+
+[icon.dir."Music"]
+text = ""
+
+[icon.dir."Pictures"]
+text = ""
+
+[icon.dir."Public"]
+text = ""
+
+[icon.dir."Videos"]
+text = ""
+
+# File rules - using nested tables
+[icon.file]
+
+# Default executable
+[icon.file.executable]
+text = ""
+
+# Link files
+[icon.file.link]
+text = ""
+
+# Orphan links
+[icon.file.orphan]
+text = ""
+
+# Block device
+[icon.file.block]
+text = ""
+
+# Character device
+[icon.file.char]
+text = ""
+
+# FIFO/pipe
+[icon.file.fifo]
+text = ""
+
+# Socket
+[icon.file.sock]
+text = ""
+
+# Sticky bit
+[icon.file.sticky]
+text = ""
+
+# Dummy/error
+[icon.file.dummy]
+text = ""
+
+# Specific file patterns
+[icon.file."\\.babelrc"]
+text = ""
+fg = "#cbcb41"
+
+[icon.file."\\.bash_profile"]
+text = ""
+fg = "#89e051"
+
+[icon.file."\\.bashrc"]
+text = ""
+fg = "#89e051"
+
+[icon.file."\\.dockerignore"]
+text = "󰡨"
+fg = "#458ee6"
+
+[icon.file."\\.ds_store"]
+text = ""
+fg = "#41535b"
+
+# ... (continue this pattern for all your file rules)
+
+# Extension rules
+[icon.ext]
+
+[icon.ext."7z"]
+text = ""
+fg = "#eca517"
+
+[icon.ext.a]
+text = ""
+fg = "#dcddd6"
+
+[icon.ext.aac]
+text = ""
+fg = "#00afff"
+
+[icon.ext.ai]
+text = ""
+fg = "#cbcb41"
+
+[icon.ext.apk]
+text = ""
+fg = "#34a853"
+
+# ... (continue for all extensions)
+
+# Conditional rules using the new syntax
+[icon.cond]
+
+[icon.cond.orphan]
+if = "orphan"
+text = ""
+
+[icon.cond.link]
+if = "link"
+text = ""
+
+[icon.cond.block]
+if = "block"
+text = ""
+
+[icon.cond.char]
+if = "char"
+text = ""
+
+[icon.cond.fifo]
+if = "fifo"
+text = ""
+
+[icon.cond.sock]
+if = "sock"
+text = ""
+
+[icon.cond.sticky]
+if = "sticky"
+text = ""
+
+[icon.cond.dummy]
+if = "dummy"
+text = ""
+
+[icon.cond.dir]
+if = "dir"
+text = "󰉋"
+
+[icon.cond.exec]
+if = "exec"
+text = ""
+
+# : }}}

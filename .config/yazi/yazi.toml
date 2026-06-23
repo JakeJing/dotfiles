@@ -1,1 +1,68 @@
-../../dotfiles/.config/yazi/yazi.toml
+# Anything apart from this follows from the default configuration
+[manager]
+# ratio = [0, 4, 5]
+ratio = [3, 3, 5]
+sort_by = "alphabetical"
+sort_dir_first = true
+linemode = "none"
+show_hidden = false
+show_symlink = false
+scrolloff = 5
+mouse_events = ["click", "scroll", "touch", "move", "drag"]
+
+[preview]
+wrap = "yes"
+tab_size = 2
+max_width = 1600
+max_height = 2000
+
+[opener]
+edit = [
+    { run = 'hx "$@"', desc = "Helix", block = true, for = "unix" },
+    { run = 'nvim "$@"', desc = "Neovim", block = true, for = "unix" },
+    { run = 'code "$@"', desc = "VS Code", block = false, for = "unix" },
+]
+open = [
+    { run = 'open "$@"', desc = "Open", for = "macos" },
+]
+
+[[opener.bulk-rename]]
+run   = 'hx "$@"'
+block = true
+
+[[open.prepend_rules]]
+mime = "text/plain"
+use  = "bulk-rename"
+
+# [plugin]
+# prepend_previewers = [
+#     { mime = "application/zip", run = "ouch" },
+#     { mime = "application/x-tar", run = "ouch" },
+#     { mime = "application/x-bzip2", run = "ouch" },
+#     { mime = "application/x-7z-compressed", run = "ouch" },
+#     { mime = "application/x-rar", run = "ouch" },
+#     { mime = "application/x-xz", run = "ouch" },
+#     { name = "*.md", run = 'glow -w=$w -s=dark "$1"' },
+#     { name = "*.{pdb,pqr}", run = "code" },
+#     { mime = "audio/*", run = "exifaudio" },
+#     { mime = "application/x-bittorrent", run = "torrent-preview" },
+#     { name = "*.ipynb", run = 'rich -j --left --panel=rounded --guides --line-numbers --force-terminal "$1"' },
+#     { name = "*.rst", run = 'rich -j --left --panel=rounded --guides --line-numbers --force-terminal "$1"' },
+#     { name = "*.csv", run = "duckdb" },  
+#     { name = "*.tsv", run = "duckdb" },  
+#     { name = "*.json", run = "duckdb" },  
+#     { name = "*.parquet", run = "duckdb" },  
+#     { name = "*.txt", run = "duckdb" },  
+#     { name = "*.xlsx", run = "duckdb" },  
+#     { name = "*.db", run = "duckdb" },
+#     { name = "*.duckdb", run = "duckdb" }
+# ]
+
+# prepend_preloaders = [  
+#     { name = "*.csv", run = "duckdb", multi = false },  
+#     { name = "*.tsv", run = "duckdb", multi = false },  
+#     { name = "*.json", run = "duckdb", multi = false },  
+#     { name = "*.parquet", run = "duckdb", multi = false },
+#     { name = "*.txt", run = "duckdb", multi = false },  
+#     { name = "*.xlsx", run = "duckdb", multi = false }
+# ]

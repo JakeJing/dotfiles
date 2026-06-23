@@ -1,1 +1,220 @@
-../../dotfiles/.config/yazi/keymap.toml
+############################################
+# SHELL
+############################################
+[[mgr.prepend_keymap]]
+on  = ["!"]
+run = 'shell "fish -c \" $0\"" --block --interactive --cursor=9'
+desc = "Open fish shell interactive"
+
+[[mgr.prepend_keymap]]
+on  = [";"]
+run = 'shell --block --interactive'
+desc = "Open shell interactive"
+
+[[mgr.prepend_keymap]]
+on  = ["s"]
+run = 'shell "$SHELL" --block'
+desc = "Open default shell here"
+
+[[mgr.prepend_keymap]]
+on  = "<C-n>"
+run = "shell 'open \"$PWD\"'"
+desc = "Open current folder in Finder"
+# run = "shell 'open \"$1\"' --confirm"
+# desc = "Open in Finder"
+############################################
+# SEARCH
+############################################
+
+[[mgr.prepend_keymap]]
+on  = ["F"]
+run = "plugin fr rga"
+desc = "Search file by content (rga)"
+
+[[mgr.prepend_keymap]]
+on  = ["f"]
+run = "plugin jump-to-char"
+desc = "Jump to char"
+
+
+############################################
+# DUCKDB
+############################################
+
+[[mgr.prepend_keymap]]
+on  = ["g", "H"]
+run = "plugin duckdb -1"
+
+[[mgr.prepend_keymap]]
+on  = ["g", "L"]
+run = "plugin duckdb +1"
+
+[[mgr.prepend_keymap]]
+on  = ["g", "o"]
+run = "plugin duckdb -open"
+
+[[mgr.prepend_keymap]]
+on  = ["g", "u"]
+run = "plugin duckdb -ui"
+
+
+############################################
+# PDF PREVIEW
+############################################
+
+[[mgr.prepend_keymap]]
+on  = [":", "v"]
+run = '''
+shell 'termpdf.py "$@"' --block --confirm
+'''
+desc = "preview pdf in termpdf"
+
+
+############################################
+# TRASH (ONLY ONE VERSION KEPT)
+############################################
+
+[[mgr.prepend_keymap]]
+on  = ["d"]
+run = 'shell "trash-put \"$@\"" --block'
+desc = "Trash selected files"
+
+
+############################################
+# QUIT / CLOSE
+############################################
+
+[[mgr.prepend_keymap]]
+on  = "<C-x>"
+run = "close"
+desc = "Close tab / quit"
+
+[[mgr.prepend_keymap]]
+on  = "q"
+run = "plugin confirm-quit"
+desc = "confirm quit"
+
+
+############################################
+# NAVIGATION
+############################################
+
+[[mgr.prepend_keymap]]
+on  = ["z"]
+run = "plugin zoxide"
+
+[[mgr.prepend_keymap]]
+on  = ["<F5>"]
+run = "refresh"
+
+[[mgr.prepend_keymap]]
+on  = ["A"]
+run = "create --dir"
+
+[[mgr.prepend_keymap]]
+on  = "<C-k>"
+run = "seek -5"
+
+[[mgr.prepend_keymap]]
+on  = "<C-j>"
+run = "seek 5"
+
+[[mgr.prepend_keymap]]
+on  = ["B"]
+run = "plugin toggle-pane min-preview"
+
+[[mgr.prepend_keymap]]
+on  = ["T"]
+run = "plugin toggle-pane max-preview"
+
+############################################
+# BOOKMARKS
+############################################
+
+[[mgr.prepend_keymap]]
+on  = ["m", "a"]
+run = "plugin yamb save"
+
+
+[[mgr.prepend_keymap]]
+on  = "'"   # Note: quoted string, NOT brackets
+run = "plugin yamb jump_by_key"
+desc = "Jump to bookmark"
+
+
+# [[mgr.prepend_keymap]]
+# on = ["b"]
+# run = "plugin yamb jump_by_key"
+# # run = "plugin yamb select"
+# desc = "TEST bookmark jump"
+
+
+[[mgr.prepend_keymap]]
+on  = ["m", "d"]
+run = "plugin yamb delete_by_key"
+
+[[mgr.prepend_keymap]]
+on  = ["m", "D"]
+run = "plugin yamb delete_by_fzf"
+
+[[mgr.prepend_keymap]]
+on  = ["m", "A"]
+run = "plugin yamb delete_all"
+
+[[mgr.prepend_keymap]]
+on  = ["m", "r"]
+run = "plugin yamb rename_by_key"
+
+[[mgr.prepend_keymap]]
+on  = ["m", "R"]
+run = "plugin yamb rename_by_fzf"
+
+
+############################################
+# QUICK ACTIONS
+############################################
+
+[[mgr.prepend_keymap]]
+on  = ["i"]
+run = "plugin easyjump"
+
+[[mgr.prepend_keymap]]
+on  = ["<C-1>"]
+run = "plugin copy-file-contents"
+
+[[mgr.prepend_keymap]]
+on  = "<C-y>"
+run = "plugin system-clipboard"
+
+
+############################################
+# MACOS PREVIEW
+############################################
+
+[[mgr.prepend_keymap]]
+on  = "<C-p>"
+run = 'shell "qlmanage -p \"$@\"" --confirm'
+
+
+############################################
+# GIT ROOT
+############################################
+
+[[mgr.prepend_keymap]]
+on  = ["g", "r"]
+run = '''
+shell 'ya pub dds-cd --str "$(git rev-parse --show-toplevel)"' --confirm
+'''
+
+
+############################################
+# ENTER / PARENT SMART NAV
+############################################
+
+[[mgr.prepend_keymap]]
+on  = ["l"]
+run = "plugin bypass smart_enter"
+
+[[mgr.prepend_keymap]]
+on  = ["H"]
+run = "plugin bypass reverse"
