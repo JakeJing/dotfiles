@@ -38,7 +38,7 @@ injection-regex = "(r|R)"
 file-types = ["r", "R"]
 shebangs = ["r", "R"]
 roots = []
-comment-token = "#"
+# comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
 # language-server = { command = "R", args = ["--no-echo", "-e", "languageserver::run()"] }
 
