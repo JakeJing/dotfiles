@@ -1,4 +1,4 @@
-# set default python3 config as arm64
+# set default python3 config asrm64
 # alias python3='arch -arm64 /Library/Frameworks/Python.framework/Versions/3.11/bin/python3'
 # alias pip3='arch -arm64 /Library/Frameworks/Python.framework/Versions/3.11/bin/pip3'
 
@@ -61,7 +61,7 @@ alias sdts "sudo trash"
 alias tsl trash-list
 alias tsr trash-restore
 alias tsep trash-empty
-# alias rm trash-rm
+alias rm trash-rm
 
 # lazygit 
 alias lg lazygit
